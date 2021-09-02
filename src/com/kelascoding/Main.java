@@ -10,12 +10,15 @@ public class Main {
         int nUas, nUts, nUpm;
         double nRata;
         String nama;
-        char predikat;
+        char predikat, jurusan;
         System.out.println("Program Menghitung Nilai Mahasiswa");
 
         Scanner input = new Scanner(System.in);
         System.out.println("Masukkan Nama Mahasiswa : ");
         nama = input.nextLine();
+
+        System.out.println("Masukkan Program Studi (A-E) : ");
+        jurusan = input.next().charAt(0);
 
         System.out.println("Masukkan Nilai UTS : ");
         nUts = input.nextInt();
@@ -27,6 +30,24 @@ public class Main {
         nUpm = input.nextInt();
 
         nRata = nUts*0.2+nUas*0.3+nUpm*0.5;
+
+        switch (jurusan) {
+            case 'A':
+                System.out.println("Teknik Informatika");
+                break;
+            case 'B':
+                System.out.println("Desain Komunikasi Visual");
+                break;
+            case 'C':
+                System.out.println("Teknik Industri");
+                break;
+            case 'D':
+                System.out.println("Teknik Arsitektur");
+                break;
+            case 'E':
+                System.out.println("Teknik Perminyakan");
+                break;
+        }
 
         if (nRata>=91){
             predikat = 'A';
